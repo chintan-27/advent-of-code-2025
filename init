@@ -1,0 +1,70 @@
+#!/bin/bash
+
+# File: init
+# Usage:
+#   ./init Day$      -> create folder + boilerplate
+#   ./init run Day$  -> compile & run Day2/solution.cpp
+
+ROOT_DIR=$(pwd)
+
+create_day() {
+    DAY=$1
+    DAY_DIR="$ROOT_DIR/$DAY"
+
+    if [ -d "$DAY_DIR" ]; then
+        echo "[WARN] $DAY already exists."
+    else
+        echo "[INFO] Creating $DAY ..."
+        mkdir -p "$DAY/problem"
+        touch "$DAY/input.txt"
+
+        # copy boilerplate
+        cp "$ROOT_DIR/boilerplate.cpp" "$DAY/solution.cpp"
+        echo "[INFO] Boilerplate copied."
+    fi
+}
+
+run_day() {
+    DAY=$1
+    DAY_DIR="$ROOT_DIR/$DAY"
+
+    if [ ! -d "$DAY_DIR" ]; then
+        echo "[ERROR] $DAY does not exist."
+        exit 1
+    fi
+
+    echo "[INFO] Compiling $DAY/solution.cpp ..."
+    g++ "$DAY/solution.cpp" -std=c++20 -O2 -o "$DAY/output"
+
+    if [ ! $? -eq 0 ]; then
+        echo "[ERROR] Compilation failed."
+        exit 1
+    fi
+
+    echo "[INFO] Running $DAY/output"
+    echo "----------------------------------"
+        cd "$DAY"
+        ./output
+    echo "----------------------------------"
+}
+
+# -------------------------------
+# Command handling
+# -------------------------------
+if [ "$1" == "run" ]; then
+    if [ -z "$2" ]; then
+        echo "[ERROR] Usage: ./init run DayX"
+        exit 1
+    fi
+    run_day "$2"
+    exit 0
+fi
+
+if [ -z "$1" ]; then
+    echo "Usage:"
+    echo "  ./init DayX"
+    echo "  ./init run DayX"
+    exit 0
+fi
+
+create_day "$1"
