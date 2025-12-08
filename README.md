@@ -71,11 +71,12 @@ g++ DayX/solution.cpp -std=c++20 -O2 -o DayX/output
 ## Progress & Results
 
 This format supports **any number of parts** per day.
-
+<!-- RESULTS_START -->
 | Day | Status  | Parts Completed | Time     | Stars earned           |
 | --- | ------- | --------------- | -------- | --------------- |
 | 1   | Done    | Part 1, Part 2  | ~0.40 ms | ⭐️⭐️ |
 | 2   | Pending | —               | —        | —               |
+<!-- RESULTS_END -->
 
 <!-- ---
 
