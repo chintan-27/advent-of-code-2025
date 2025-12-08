@@ -4,6 +4,7 @@
 #include <iostream>
 #include <chrono>
 #include <sstream>
+#include <vector>
 
 //
 // ===============================
@@ -26,6 +27,29 @@ inline std::string strip(const std::string &inpt)
     return std::string(start_it, end_it + 1);
 }
 
+inline std::vector<std::string> split(const std::string &input, char delim)
+{
+    std::vector<std::string> parts;
+    std::string current;
+
+    for (char c : input)
+    {
+        if (c == delim)
+        {
+            parts.push_back(current);
+            current.clear();
+        }
+        else
+        {
+            current.push_back(c);
+        }
+    }
+
+    // push the last segment
+    parts.push_back(current);
+
+    return parts;
+}
 //
 // ===============================
 // LOGGING UTILITIES
