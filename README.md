@@ -75,7 +75,12 @@ This format supports **any number of parts** per day.
 | Day | Status  | Parts Completed | Time     | Stars earned           |
 | --- | ------- | --------------- | -------- | --------------- |
 | 1   | Done    | Part 1, Part 2  | ~0.40 ms | ⭐️⭐️ |
-| 2   | Pending | —               | —        | —               |
+| 2   | Done | Part 1, Part 2 | ~105.6 ms |⭐️⭐️|
+| 3   | Pending |- |- |-|
+| 4   | Pending |- |- |-|
+| 5   | Pending |- |- |-|
+| 6   | Pending |- |- |-|
+| 7   | Pending |- |- |-|
 <!-- RESULTS_END -->
 
 <!-- ---
