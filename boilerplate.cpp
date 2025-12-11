@@ -6,14 +6,24 @@
 
 class Solution {
 public:
+    // Part 1 (return type flexible)
     template <typename T>
-    T func(T value) {
-        return value;
+    T part1(const std::vector<std::string>& input) {
+        // TODO: return whatever type Part 1 needs
+        // Example: return (T)123;
+        return T{};
+    }
+
+    // Part 2 (return type flexible)
+    template <typename T>
+    T part2(const std::vector<std::string>& input) {
+        // TODO: return whatever type Part 2 needs
+        // Example: return (T)456;
+        return T{};
     }
 };
 
 int main() {
-    Timer::start();
     Solution sol;
 
     std::ifstream inputFile("input.txt");
@@ -29,9 +39,17 @@ int main() {
         input.push_back(strip(line));
     }
 
-    // Example: auto result = sol.func<int>(42);
-    // Log::result("Answer: " + std::to_string(result));
+    // ------------ Part 1 ------------
+    Timer::start();
+    auto answer1 = sol.part1<long long>(input);   // or int, string, etc.
+    Log::result("Part 1 Answer: " + std::to_string(answer1));
+    Timer::print("Part 1 Execution Time");
 
-    Timer::print("Execution Time");
+    // ------------ Part 2 ------------
+    Timer::start();
+    auto answer2 = sol.part2<long long>(input);   // or int, string, etc.
+    Log::result("Part 2 Answer: " + std::to_string(answer2));
+    Timer::print("Part 2 Execution Time");
+
     return 0;
 }
