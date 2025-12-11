@@ -17,6 +17,8 @@ create_day() {
         echo "[INFO] Creating $DAY ..."
         mkdir -p "$DAY/problem"
         touch "$DAY/input.txt"
+        touch "$DAY/problem/part1.txt"
+        touch "$DAY/problem/part2.txt"
 
         # copy boilerplate
         cp "$ROOT_DIR/boilerplate.cpp" "$DAY/solution.cpp"
