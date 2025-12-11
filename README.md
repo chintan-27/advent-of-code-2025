@@ -76,7 +76,7 @@ This format supports **any number of parts** per day.
 | --- | ------- | --------------- | -------- | --------------- |
 | 1   | Done    | Part 1, Part 2  | ~0.40 ms | ⭐️⭐️ |
 | 2   | Done | Part 1, Part 2 | ~105.6 ms |⭐️⭐️|
-| 3   | Pending |- |- |-|
+| 3   | Done | Part 1, Part 2 | ~0.6 ms |⭐️⭐️|
 | 4   | Pending |- |- |-|
 | 5   | Pending |- |- |-|
 | 6   | Pending |- |- |-|
